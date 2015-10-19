@@ -1,0 +1,49 @@
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1><span style="font-weight:100;">Coder</span>Blog</h1>
+                    <hr class="small">
+                    <span class="subheading">by hammerStrike</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{#if pageData.posts}}
+              {{#each pageData.posts}}
+              <div class="post-preview">
+                  <a href="/post/{{id}}">
+                      <h2 class="post-title">
+                          {{title}}
+                      </h2>
+                      {{#if shortle}}
+                      <h3 class="post-subtitle">
+                          {{shortle}}
+                      </h3>
+                      {{/if}}
+                  </a>
+                  <p class="post-meta">Posted by <a href="#">{{author}}</a> in <a href="javascript:void(0)">{{category}}</a> on {{date}}</p>
+              </div>
+              <hr>
+              {{/each}}
+              <!-- Pager -->
+              <ul class="pager">
+                  <li class="next">
+                      <a href="#">Older Posts &rarr;</a>
+                  </li>
+              </ul>
+            {{else}}
+            <h3>No any posts.</h3>
+            {{/if}}
+        </div>
+    </div>
+</div>

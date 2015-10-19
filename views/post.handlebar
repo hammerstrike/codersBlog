@@ -1,0 +1,30 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>{{postData.title}}</h1>
+                    {{#if postData.shortle}}
+                    <h2 class="subheading">{{postData.shortle}}</h2>
+                    {{/if}}
+                    <span class="meta">Posted by <a href="#">{{postData.author}}</a> on {{postData.date}}</span>
+                    <br>
+                    <a href="javascript:void(0)">{{postData.category}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{{postData.description}}}
+            </div>
+        </div>
+    </div>
+</article>

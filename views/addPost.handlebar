@@ -1,0 +1,51 @@
+<form method="POST" action="/post/addPost" id="add_new_post" enctype="multipart/form-data">
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('/img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <input class="heading" type="text" value="" placeholder="Add New Post" id="postheading" name="postheading"/>
+
+                        <input class="shortle" type="text" value="" placeholder="Short descriotion"  id="postshortle" name="postshortle"/>
+
+                        <span class="meta">Posted by <input type="text" value="" placeholder="author" id="postauthor" name="postauthor"/> on date</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                  <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="catdrop" data-toggle="dropdown">
+                      <span class="drpdwntr">Select Category</span>
+                      <span class="caret"></span>
+                      <input type="hidden" value="" id="catdropval"/>
+                    </button>
+                    <ul class= "dropdown-menu cat-dropdown-menu">
+                      {{#each categories}}
+                      <li><a href="javascript:void(0)" data-value="{{title}}">{{title}}</a></li>
+                      {{/each}}
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <textarea class="description" placeholder="Description goes here..." id="postdescription" name="postdescription"></textarea>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <input type="file" class="btn btn-primary" id="postphoto" id="postphoto" name="postphoto"/>
+                </div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <button type="submit" class="btn btn-primary" id="btnsave">SAVE</button>
+                </div>
+            </div>
+        </div>
+
+    </article>
+</form>

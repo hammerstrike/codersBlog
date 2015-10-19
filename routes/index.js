@@ -11,14 +11,14 @@ pageData.title = "NodeJS Blog";
 
 switch(express().get('env')){
 	case 'development' : {
-			//var connString = "mongodb://localhost:27017/nodeBlog";
-			var connString = "mongodb://admin:admin@ds055872.mongolab.com:55872/codersblog";
+			var connString = "mongodb://localhost:27017/nodeBlog";
+
 			mongoose.connect(connString,dbOptions);
 		}
 		break;
 
 	case 'production' : {
-      var connString = "mongodb://admin:admin@ds055872.mongolab.com:55872/codersblog";
+      
       mongoose.connect(connString,dbOptions);
 		}
 		break;
@@ -40,7 +40,7 @@ router.get('/', function(req, res, next) {
 			res.render('home', {pageData:pageData});
 	  	return;
 	  }else{
-	     //console.log('no posts found');			
+	     //console.log('no posts found');
 			 res.render('home', {pageData:pageData});
 	  }
 	});

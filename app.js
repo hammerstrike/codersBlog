@@ -5,12 +5,13 @@ var logger            = require('morgan');
 var expressValidator  = require('express-validator');
 var cookieParser      = require('cookie-parser');
 var session           = require('express-session');
+var creds		          = require('./creds.js');
 var bodyParser        = require('body-parser');
 var handlebar         = require('express3-handlebars').create({defaultLayout:'master'});
 //var mongo           = require('mongodb');
 //var db              = require('monk')('localhost/nodeBlog');
 //var db              = require('monk')('mongodb://localhost:27017/nodeBlog');
-//var mongoOp           = require("./models/mongo");
+//var mongoOp         = require("./models/mongo");
 var multer            = require('multer');
 var moment            = require('moment');
 var uploads           = multer({dest:'./public/img/uploads'});
@@ -35,14 +36,10 @@ app.set('view engine','handlebar');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser(creds.cookieConfig.secret));
 
 //express session
-app.use(session({
-  secret :'secret',
-  saveUninitialized : true,
-  resave : true
-}));
+app.use(session(creds.sessionConfig));
 
 //express validator
 app.use(expressValidator({
@@ -89,6 +86,7 @@ app.use(function(req, res, next) {
 
 // error handlers
 
+
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -106,8 +104,8 @@ if (app.get('env') === 'development') {
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
-    message: err.message,
-    error: {}
+    error:err,
+    message: err.message
   });
 });
 

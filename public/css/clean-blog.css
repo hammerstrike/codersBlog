@@ -100,6 +100,7 @@ hr.small {
   .navbar-custom .nav li a:focus {
     color: rgba(255, 255, 255, 0.8);
   }
+  .navbar-custom .dropdown .dropdown-menu li a{color: #000;}
 }
 @media only screen and (min-width: 1170px) {
   .navbar-custom {
@@ -282,7 +283,7 @@ hr.small {
 /* user */
 
 #loggit {
-	
+
 }
 #loggit h1 {
 	text-align: center;
@@ -324,7 +325,7 @@ hr.small {
     text-decoration: underline;
 }
 #loggit #regForm {
-	
+
 }
 /* Add new post */
 #add_new_post input,

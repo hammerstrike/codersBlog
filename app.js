@@ -21,7 +21,7 @@ var users             = require('./routes/users');
 var post              = require('./routes/post');
 
 var app               = express();
-
+var sess = null;
 // view engine setup
 //app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');
@@ -72,9 +72,9 @@ app.use(function(req,res,next){
   next();
 });*/
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/post',post);
+app.use('/', routes); //home
+app.use('/users', users); //login reg
+app.use('/post',post); //posts
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

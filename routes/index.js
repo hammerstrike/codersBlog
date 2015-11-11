@@ -5,7 +5,7 @@ var Posts		  = require('../models/posts.js');
 var creds		  = require('../creds.js');
 var router    = express.Router();
 var dbOptions = {server : {	socketOptions : {keepAlive:1}}};
-var pageData  = {};
+var pageData  = {},sess;
 
 /*set page data */
 pageData.title = "NodeJS Blog";
@@ -29,6 +29,7 @@ switch(express().get('env')){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+	console.log('root');
 	sess = req.session;
 	//sess.username = "amardeep";
 	pageData.username = sess.username;

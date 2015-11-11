@@ -52,11 +52,12 @@ $(document).ready(function(){
 			var catname = $(this).attr('data-value');
 			$('#catdropval').val(catname);
 			$('#catdrop .drpdwntr').text(catname);
-	})
+	});
+
 	//add post ajax
 	$('#add_new_post')
 		.on('submit',function(e){
-			event.preventDefault();
+			e.preventDefault();
 			var url = $(this).attr('action');
 			var inputData = {
 					postTitle 	: $('#postheading').val(),
@@ -82,6 +83,49 @@ $(document).ready(function(){
 		});
 
   //login
+	$('#frmLogin')
+		.on('submit',function (e) {
+			e.preventDefault();
+			var url = $(this).attr('action');
+			var inputData = {
+					username 	: $('#lusername').val(),
+					password : $('#lpassword').val()
+			}
+
+			$.ajax({
+						type: 'POST',
+						data: JSON.stringify(inputData),
+				    contentType: 'application/json',
+            url: "users/login",
+              success: function(data) {
+                  if(data.success){
+										//alert('user found');
+										window.location = '/';
+									}else{
+										alert('user not found');
+									}
+              }
+          });
+		});
+
+		//Register
+		$('#regForm')
+			.on('submit',function (e) {
+				e.preventDefault();				
+				var inputData = {
+						email 	: $('#remail').val(),
+						password : $('#rpassword').val()
+				}
+				$.ajax({
+							type: 'POST',
+							data: JSON.stringify(inputData),
+					    contentType: 'application/json',
+	            url: "users/register",
+              success: function(data) {
+                  alert(data.msg);
+									}
+	          });
+			});
 });
 
 

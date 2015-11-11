@@ -1,0 +1,68 @@
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('/img/post-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="post-heading">
+                    <div id="loggit">
+                        <div class="row">
+                            <h2 class="col-md-4 col-md-offset-1">LogIn</h2>
+                            <h2 class="col-md-4 col-md-offset-1">Register</h2>
+                            <div class="col-md-4 col-md-offset-1">
+                                <form id="frmLogin" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                                                <input type="text" name="lusername" id="lusername" class="form-control input-lg" placeholder="Username / Email id" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                                <input type="password" id="lpassword" name="lpassword" class="form-control input-lg" placeholder="Password" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group formSubmit">
+                                        <div class="col-sm-12 submitWrap">
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-4 col-md-offset-1">
+                                <form id="regForm" enctype="multipart/form-data" class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                                                <input type="text" name="remail" id="remail" class="form-control input-lg" placeholder="Email Id" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-xs-12">
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                                                <input type="password" name="rpassword" id="rpassword" class="form-control input-lg" placeholder="Password" autocomplete="off">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group formSubmit">
+                                        <div class="col-sm-12 submitWrap">
+                                            <button type="submit" class="btn btn-success btn-lg btn-block">Register</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
